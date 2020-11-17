@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.SpaServices.AngularCli;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -23,11 +24,8 @@ namespace commander
         {
             services.AddControllersWithViews();
 
-
-            // BIGNOTE: this looks different based on the db u use!!!!
-            //need to uncomment this line for ure db connection to work
-
-            // services.AddDbContext<CommanderContext>(opt => opt.UseApplicationServiceProvider())
+            //effectively uses DI to add the connection string to start up configuration.
+            services.AddDbContext<CommanderContext>(options => options.UseNpgsql(Configuration.GetConnectionString("BloggingContext")));
 
             //this is like the bean.xml file in spring Instructions find and replace with D/I
             services.AddScoped<ICommanderRepo, MockCommanderRepo>();

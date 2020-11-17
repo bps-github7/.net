@@ -12,5 +12,9 @@ namespace Commander.Data
 
         public DbSet<Command> Commands { get; set; }
 
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+            => optionsBuilder.UseNpgsql("Host=localhost,5432;Database=Commander_DB;Username=CommanderApi;Password=CommanderAPIPassword2020");
+
     }
 }
