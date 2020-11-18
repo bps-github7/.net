@@ -25,7 +25,7 @@ namespace commander
             services.AddControllersWithViews();
 
             //effectively uses DI to add the connection string to start up configuration.
-            services.AddDbContext<CommanderContext>(options => options.UseNpgsql(Configuration.GetConnectionString("BloggingContext")));
+            services.AddDbContext<CommanderContext>(options => options.UseSqlServer());
 
             //this is like the bean.xml file in spring Instructions find and replace with D/I
             services.AddScoped<ICommanderRepo, MockCommanderRepo>();
@@ -56,6 +56,13 @@ namespace commander
             if (!env.IsDevelopment())
             {
                 app.UseSpaStaticFiles();
+            }
+            using (var srvc = app.ApplicationServices.GetRequiredService<IServiceScopeFactory>().CreateScope())
+            {
+                //I think this is right but this is the first place you should
+                //check if there are problems.
+                var context = srvc.ServiceProvider.GetService<CommanderContext>();
+                context.Database.Migrate();
             }
 
             app.UseRouting();
