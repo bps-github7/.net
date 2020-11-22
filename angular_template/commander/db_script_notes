@@ -1,0 +1,19 @@
+-- Programmer: Ben Sehnert
+-- date: 11/22/2020
+-- software: CommanderApi
+-- Purpose: Initialize the database for CommanderApi- create users, database and connect to it.
+
+-- note: to use this script, you must copy it to the directory containing the sql-express executable.
+
+-- for docker: 
+-- $ docker cp commander_db.sql sql-server-db:/opt/mssql-tools/bin/sqlcmd
+-- then run the following
+-- $ docker exec -it sql-server-db "bash"
+-- $ /opt/mssql-tools/bin/sqlcmd -S localhost -U SA -P super_DUPER_password -i commander_db.sql
+
+-- something weird happened with this script- running the above command seemed to 
+-- alter the sqlcmd executable in some way. Whenever i try to open the db ( without -i argument for the input file)
+-- I get errors indicating that it is trying to run that script.
+
+--DEV notes: I updated the script with SQL queries that should work- check example invokation online before proceeding.
+-- the solution was I had to create a LOGIN, then connect to the database and make a USER for that LOGIN. Ayye Ayye Ayye.

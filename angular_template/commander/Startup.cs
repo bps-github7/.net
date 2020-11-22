@@ -25,7 +25,8 @@ namespace commander
             services.AddControllersWithViews();
 
             //effectively uses DI to add the connection string to start up configuration.
-            services.AddDbContext<CommanderContext>(options => options.UseSqlServer());
+            services.AddDbContext<CommanderContext>(options => options.UseSqlServer
+                (Configuration.GetConnectionString("DefaultConnection")));
 
             //this is like the bean.xml file in spring Instructions find and replace with D/I
             services.AddScoped<ICommanderRepo, MockCommanderRepo>();
