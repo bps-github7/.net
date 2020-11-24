@@ -1,5 +1,5 @@
 DROP DATABASE CommanderDb
-GO
+GOs
 
 DROP USER CommanderApi
 GO
@@ -14,4 +14,5 @@ GO
 CREATE USER CommanderApi FOR LOGIN CommanderApi
 GO
 
-GRANT ALL ON CommanderDb TO 'CommanderApi'@'localhost'
+ALTER ROLE db_owner ADD MEMBER CommanderApi
+GO
