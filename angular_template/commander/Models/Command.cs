@@ -12,15 +12,6 @@ namespace Commander.Models
     public class Command
     {
 
-        // public Command(int Id, string HowTo, string Line, string Platform)
-        // {
-        //     this.Id = Id;
-        //     this.HowTo = HowTo;
-        //     this.Line = Line;
-        //     this.Platform = Platform;
-        // }
-
-
         [Key]
         public int Id { get; set; }
 

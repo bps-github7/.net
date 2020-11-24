@@ -1,3 +1,5 @@
+using System;
+using AutoMapper;
 using Commander.Data;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -29,7 +31,12 @@ namespace commander
                 (Configuration.GetConnectionString("DefaultConnection")));
 
             //this is like the bean.xml file in spring Instructions find and replace with D/I
-            services.AddScoped<ICommanderRepo, MockCommanderRepo>();
+            services.AddScoped<ICommanderRepo, sqlCommanderRepo>();
+
+
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+
 
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
