@@ -32,6 +32,10 @@ namespace Commander
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+    //TODO:  Application startup exception
+      // System.InvalidOperationException: An exception has been raised that is likely due to a transient failure. Consider enabling transient error resiliency by adding 'EnableRetryOnFailure()' to the 'UseSqlServer' call.
+
+          //something about 
             services.AddDbContext<CommanderContext>(options => options.UseSqlServer
                 (Configuration.GetConnectionString("DefaultConnection")));
 

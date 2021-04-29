@@ -5730,11 +5730,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Ben\\VsCode\\.net\\Commander\\Commander.csproj",
+      "projectUniqueName": "C:\\Users\\Ben\\VsCode\\web\\.net\\Commander\\Commander.csproj",
       "projectName": "Commander",
-      "projectPath": "C:\\Users\\Ben\\VsCode\\.net\\Commander\\Commander.csproj",
+      "projectPath": "C:\\Users\\Ben\\VsCode\\web\\.net\\Commander\\Commander.csproj",
       "packagesPath": "C:\\Users\\Ben\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Ben\\VsCode\\.net\\Commander\\obj\\",
+      "outputPath": "C:\\Users\\Ben\\VsCode\\web\\.net\\Commander\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Ben\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -5824,7 +5824,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.104\\RuntimeIdentifierGraph.json"
       }
     }
   }
