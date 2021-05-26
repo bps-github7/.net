@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-=======
 ### .net repository README.md
 ### Programmer: Ben P Sehnert
 ### Date: 11/17/2020
