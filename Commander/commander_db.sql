@@ -2,7 +2,7 @@
 
 
 DROP DATABASE CommanderDb
-GOs
+GO
 
 DROP USER CommanderApi
 GO
