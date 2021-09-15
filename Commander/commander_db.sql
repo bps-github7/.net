@@ -1,6 +1,3 @@
-
-
-
 DROP DATABASE CommanderDb
 GO
 
